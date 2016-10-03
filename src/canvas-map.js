@@ -782,8 +782,8 @@ const CanvasMap=(props)=>{
 
       let gradient=this.ctx.createLinearGradient(this.sectionsBounds[0].right,0,this.sectionsBounds[0].right+200,0)
       if(blendWorks){
-        gradient.addColorStop(0,'rgba(185, 217, 151, 1)')
-        gradient.addColorStop(1,"rgba(185, 217, 151, 0)")
+        gradient.addColorStop(0,'rgba(255, 217, 151, 1)')
+        gradient.addColorStop(1,"rgba(255, 217, 151, 0)")
       }else{
         gradient.addColorStop(0,'rgba(255, 255, 255, 0.85)')
         gradient.addColorStop(1,"rgba(255, 255, 255, 0)")
