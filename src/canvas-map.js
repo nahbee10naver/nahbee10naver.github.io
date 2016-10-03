@@ -628,7 +628,7 @@ const CanvasMap=(props)=>{
 
       let drawLabel=(point,i)=>{
         let fontSize=15
-        this.ctx.font=`${setByStatus(i,'normal','bold')} ${(setByStatus(i,fontSize,fontSize*1.2))}px Arial`
+        this.ctx.font=`${setByStatus(i,'normal','bold')} ${(setByStatus(i,fontSize,fontSize*3.2))}px Arial`
         this.ctx.textAlign='left'
         this.ctx.textBaseline='middle'
         this.ctx.fillStyle=setByStatus(i,
