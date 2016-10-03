@@ -542,6 +542,10 @@ const CanvasMap=(props)=>{
           this.ctx.beginPath()
           this.ctx.arc(origin.x,origin.y,imagePointRadius,0,PI2)
           this.ctx.fill()
+
+          this.ctx.fillStyle = "blue";
+          this.ctx.font = "bold 86px Arial";
+          this.ctx.fillText("Nahee Kim", ...corner1.x, ...corner1.y);
         }
 
         let corner1=[
