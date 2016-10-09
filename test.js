@@ -1,19 +1,25 @@
 var last_known_scroll_position = 0;
 var ticking = false;
 
-var ele = document.getElementById('moving');
-var ele2 = document.getElementById('moving2');
+var ele_arr = document.getElementsByClassName('thing');
+var hi_arr = document.getElementsByClassName('hi');
+var perc = [];
+var hei = window.innerHeight;
+var wid = window.innerWidth;
 
 function doSomething(scroll_pos) {
   console.log(scroll_pos);
-  var hiTop = document.getElementById('hi').getBoundingClientRect().top;
-  var hiTop2 = document.getElementById('hi2').getBoundingClientRect().top;
-  var hei = window.innerHeight;
-  var wid = window.innerWidth;
-  var perc = (hiTop/hei)-0.2;
-  var perc2 = (hiTop2/hei)-0.2;
-  ele.style.left = wid*perc;
-  ele2.style.left = wid*perc2;
+  /*var hiTop = document.getElementById('hi').getBoundingClientRect().top;
+  var hiTop2 = document.getElementById('hi2').getBoundingClientRect().top;*/
+  for (var i = 0; i <hi_arr.length; i++) {
+  	console.log(hi_arr[i].getBoundingClientRect().top);
+	perc[i] = hi_arr[i].getBoundingClientRect().top/hei-0.2;
+	console.log(perc[i]);
+
+  };
+  for (var i = 0; i <ele_arr.length; i++) {
+		ele_arr[i].style.left = wid*perc[i];
+  };
 }
 
 window.addEventListener('scroll', function(e) {
