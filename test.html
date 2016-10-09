@@ -16,11 +16,38 @@
   		line-height:100px;
   		text-align: center;
   	}
-  	.nh_name{
+  	.nh_name_nh{
   		position:fixed; 
   		color:#ff00ff;
   		background-color: blueviolet;
+      /* Safari */
+-webkit-transform: rotate(-90deg);
+
+/* Firefox */
+-moz-transform: rotate(-90deg);
+
+/* IE */
+-ms-transform: rotate(-90deg);
+
+/* Opera */
+-o-transform: rotate(-90deg);
   	}
+    .nh_name_fw{
+      position:fixed; 
+      color:#ff00ff;
+      background-color: blueviolet;
+      /* Safari */
+-webkit-transform: rotate(90deg);
+
+/* Firefox */
+-moz-transform: rotate(90deg);
+
+/* IE */
+-ms-transform: rotate(90deg);
+
+/* Opera */
+-o-transform: rotate(90deg);
+    }
   	.nh_long{
   		line-height:120px; 
   		margin-top: -40px;
@@ -33,10 +60,19 @@
 	}
 
   	@media (max-width: 600px) {
-	  .nh_name{
-		font-size: 50px !important;
-		line-height:50px !important;
+	  .nh_name_nh{
+		font-size: 70px !important;
+		line-height:70px !important;
+    left:20px !important;
+    z-index: 100;
 	  }
+    .nh_name_fw{
+    font-size: 70px !important;
+    line-height:70px !important;
+    right:20px !important;
+    z-index: 100;
+    }
+
 	  .nh_big{
 		font-size: 75px;
 		line-height:75px;
@@ -55,10 +91,12 @@
 <body style="height:1900px; overflow-x:hidden; overflow-y: scroll; ">
 	<p class = "nh_big" style="margin-top: 50px;">week0<br><a href="http://www.mini-virtuality.com/slides/workshop0-0-main.html#/">Face tracking</a><br>092916</p>
 	<p class = "nh_big nh_long"><a href="https://github.com/auduno/clmtrackr">clmtrkr</a>를 활용해서<br> 각자의 인터랙티브 마스크를<br> 만들어본다.</p>
-	<a href="https://www.mini-virtuality.com/snapchat/index.html"><span class="nh_big nh_name" style="top:0px; left:70px;">김나희</span></a>
-	<a href="https://www.mini-virtuality.com/workshop0/week0/hwi/index.html"><span class="nh_big nh_name" style="top:200px; left:70px;">황휘</span></a>
-  <div id = "hi" class = "thing" style="width:100px; background-color:#ff00ff; height:100px; margin: 0px auto;"></div>
-  <div id = "moving" class = "nh_big" style="width:50%; height:150px; position:absolute;">만들어본다.</div>
+	<a href="https://www.mini-virtuality.com/snapchat/index.html"><span class="nh_big nh_name_nh" style="top:100px; left:70px;">종로구</span></a>
+	<a href="https://www.mini-virtuality.com/workshop0/week0/hwi/index.html"><span class="nh_big nh_name_fw" style="bottom:100px; right:70px;">창선동</span></a>
+  <div id = "hi" class = "thing" style="width:50%; margin: 0px auto;"><img src="img/dongjak/daebang_donkatsu.jpg" style="width:100%;"></div>
+  <div id = "moving" class = "nh_big" style="width:100%; height:150px; position: fixed; top:50%; left:70px; z-index: 10; color:white; -webkit-text-stroke: 2px black; margin-top:-30px;">돈캇추캇추</div>
+  <div id = "hi2" class = "thing" style="width:50%; margin: 0px auto; margin-top:200px;"><img src="img/dongjak/daebang_tea.jpg" style="width:100%;"></div>
+  <div id = "moving2" class = "nh_big" style="width:100%; height:150px; position: fixed; top:50%; left:70px; z-index: 10; color:white; -webkit-text-stroke: 2px black; margin-top:-30px;">즐거운 티-타임</div>
   <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
   <script src="src/jquery.waypoints.min.js"></script>
   <script src="test.js"></script>
