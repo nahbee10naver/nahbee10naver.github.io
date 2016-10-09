@@ -18,7 +18,7 @@ function doSomething(scroll_pos) {
 
   };
   for (var i = 0; i <ele_arr.length; i++) {
-  	if(perc[i]>0){
+  	if(perc[i]<=1){
   		ele_arr[i].style.display = "inherit";
   		ele_arr[i].style.left = wid*perc[i];
   	}else{
