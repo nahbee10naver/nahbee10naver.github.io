@@ -3,6 +3,7 @@ var ticking = false;
 
 var ele_arr = document.getElementsByClassName('thing');
 var hi_arr = document.getElementsByClassName('hi');
+var for_fix = document.getElementById('letsfix');
 var perc = [];
 var hei = window.innerHeight;
 var wid = window.innerWidth;
@@ -26,6 +27,9 @@ function doSomething(scroll_pos) {
   	}
 		
   };
+  for_fix.style.position="fixed";
+  for_fix.style.top="100px";
+  for_fix.style.left="20px";
 }
 
 window.addEventListener('scroll', function(e) {
