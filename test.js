@@ -18,7 +18,12 @@ function doSomething(scroll_pos) {
 
   };
   for (var i = 0; i <ele_arr.length; i++) {
-		ele_arr[i].style.left = wid*perc[i];
+  	if(perc[i]>0){
+  		ele_arr[i].style.left = wid*perc[i];
+  	}else{
+  		ele_arr[i].style.left = wid;
+  	}
+		
   };
 }
 
