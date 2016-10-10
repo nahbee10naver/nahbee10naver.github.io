@@ -36,10 +36,7 @@ path.getBoundingClientRect();
 function doSomething(scroll_pos) {
   for (var i = 0; i <hi_arr.length; i++) {
 	perc[i] = hi_arr[i].getBoundingClientRect().top/hei-0.2;
-	path.style.transition = path.style.WebkitTransition =
-	  'stroke-dashoffset 1s ease-in-out';
-	// Go!
-	path.style.strokeDashoffset = length*(1-(i/hi_arr.length));
+	
   };
   for (var i = 0; i <ele_arr.length; i++) {
   	if(perc[i]<=0.5){
@@ -48,6 +45,10 @@ function doSomething(scroll_pos) {
   		ele_arr[i].style.left = wid*perc[i];
 		gu.innerHTML = hi_arr[i].dataset.gu;
 		dong.innerHTML = hi_arr[i].dataset.dong;
+		path.style.transition = path.style.WebkitTransition =
+		  'stroke-dashoffset 1s ease-in-out';
+		// Go!
+		path.style.strokeDashoffset = length*(10-i)*0.1;
   	}else{
   		ele_arr[i].style.display = "none";
   	}
