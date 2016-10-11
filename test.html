@@ -80,6 +80,7 @@
       font-weight: bold;
       line-height:100px;
       text-align: center;
+      display: none;
     }
   	a{
   		color:#000;
@@ -110,8 +111,8 @@
       position:fixed;
       top:10px;
       left:10px;
-      width: 70%;
-      height: 70%;
+      width: 50%;
+      height: 50%;
     }
     .word_c{
       background-color: #fff;
@@ -1352,15 +1353,31 @@
     c-0.6,2.8-17.6,38.9-19.2,44.4c-2.8,9.9,0.2,13.8,2.4,15.4c5.6,3.8,10.7,5.4,16.7,0.4c3.1-2.8,13.8-8.3,17-9.7
     c4-1.7,9.9-5.1,12.8-6.7c21.4-10.9,40.6-9.2,63.3-16.2c19.2-5.8,79.2-24.1,95.9-36.1c23.7-17.2,32.6-32.2,44-47.6"/>
 </g>
-<polygon id="jongno" style="fill:#FF00FF;stroke:#231F20;stroke-miterlimit:10;" points="255.3,118.1 242.5,148.9 229.6,118.1 "/>
-<polygon id="mapo" style="fill:#FF00FF;stroke:#231F20;stroke-miterlimit:10;" points="168.4,202.9 155.5,233.7 142.7,202.9 "/>
-<polygon id="yeongdeung" style="fill:#FF00FF;stroke:#231F20;stroke-miterlimit:10;" points="161.2,258.8 148.3,289.6 135.5,258.8 
-  "/>
-<polygon id="dongjak" style="fill:#FF00FF;stroke:#231F20;stroke-miterlimit:10;" points="226.1,305.9 213.2,336.8 200.4,305.9 "/>
-<polygon id="gwanak" style="fill:#FF00FF;stroke:#231F20;stroke-miterlimit:10;" points="208.7,365.2 195.8,396 182.9,365.2 "/>
-<polygon id="gangnam" style="fill:#FF00FF;stroke:#231F20;stroke-miterlimit:10;" points="294.1,339 281.2,369.8 268.4,339 "/>
-<polygon id="songpa" style="fill:#FF00FF;stroke:#231F20;stroke-miterlimit:10;" points="413.5,299.8 400.6,330.6 387.8,299.8 "/>
-<polygon id="gangdong" style="fill:#FF00FF;stroke:#231F20;stroke-miterlimit:10;" points="456.9,252.1 444,282.9 431.1,252.1 "/>
+<polygon id="jongno" style="display:none;fill:#FF00FF;stroke:#231F20;stroke-miterlimit:10;" points="255.3,118.1 242.5,148.9 229.6,118.1 ">
+  <animate id="jongno_a"attributeName="points" dur="500ms" repeatCount="indefinite" values="255.3,118.1 242.5,148.9 229.6,118.1 ;255.3,108.1 242.5,138.9 229.6,108.1 ;255.3,118.1 242.5,148.9 229.6,118.1 " />
+</polygon>
+<polygon id="mapo" style="display:none;fill:#FF00FF;stroke:#231F20;stroke-miterlimit:10;" points="168.4,202.9 155.5,233.7 142.7,202.9 ">
+  <animate id="mapo_a"attributeName="points" dur="500ms" repeatCount="indefinite" values="168.4,202.9 155.5,233.7 142.7,202.9 ;168.4,192.9 155.5,223.7 142.7,192.9 ;168.4,202.9 155.5,233.7 142.7,202.9 " />
+</polygon>
+<polygon id="yeongdeung" style="display:none;fill:#FF00FF;stroke:#231F20;stroke-miterlimit:10;" points="161.2,258.8 148.3,289.6 135.5,258.8 
+  ">
+  <animate id="yeongdeung_a"attributeName="points" dur="500ms" repeatCount="indefinite" values="161.2,258.8 148.3,289.6 135.5,258.8 ;161.2,248.8 148.3,279.6 135.5,248.8 ;161.2,258.8 148.3,289.6 135.5,258.8 " />
+</polygon>
+<polygon id="dongjak" style="display:none;fill:#FF00FF;stroke:#231F20;stroke-miterlimit:10;" points="226.1,305.9 213.2,336.8 200.4,305.9 ">
+  <animate id="dongjak_a"attributeName="points" dur="500ms" repeatCount="indefinite" values="226.1,305.9 213.2,336.8 200.4,305.9 ;226.1,295.9 213.2,326.8 200.4,295.9 ;226.1,305.9 213.2,336.8 200.4,305.9 " />
+</polygon>
+<polygon id="gwanak" style="display:none;fill:#FF00FF;stroke:#231F20;stroke-miterlimit:10;" points="208.7,365.2 195.8,396 182.9,365.2 ">
+  <animate id="gwanak_a"attributeName="points" dur="500ms" repeatCount="indefinite" values="208.7,365.2 195.8,396 182.9,365.2 ;208.7,355.2 195.8,386 182.9,355.2 ;208.7,365.2 195.8,396 182.9,365.2 " />
+</polygon>
+<polygon id="gangnam" style="display:none;fill:#FF00FF;stroke:#231F20;stroke-miterlimit:10;" points="294.1,339 281.2,369.8 268.4,339 ">
+  <animate id="gangnam_a"attributeName="points" dur="500ms" repeatCount="indefinite" values="294.1,339 281.2,369.8 268.4,339 ;294.1,329 281.2,359.8 268.4,329 ;294.1,339 281.2,369.8 268.4,339 " />
+</polygon>
+<polygon id="songpa" style="display:none;fill:#FF00FF;stroke:#231F20;stroke-miterlimit:10;" points="413.5,299.8 400.6,330.6 387.8,299.8 ">
+  <animate id="songpa_a"attributeName="points" dur="500ms" repeatCount="indefinite" values="413.5,299.8 400.6,330.6 387.8,299.8 ;413.5,289.8 400.6,320.6 387.8,289.8 ;413.5,299.8 400.6,330.6 387.8,299.8 " />
+</polygon>
+<polygon id="gangdong" style="display:none;fill:#FF00FF;stroke:#231F20;stroke-miterlimit:10;" points="456.9,252.1 444,282.9 431.1,252.1 ">
+  <animate id="gangdong_a"attributeName="points" dur="500ms" repeatCount="indefinite" values="456.9,252.1 444,282.9 431.1,252.1 ;456.9,242.1 444,272.9 431.1,242.1 ;456.9,252.1 444,282.9 431.1,252.1 " />
+</polygon>
 </svg>
 
   <div class="title">I WILL SEOUL YOU.</div>
