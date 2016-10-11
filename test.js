@@ -48,7 +48,34 @@ function doSomething(scroll_pos) {
 		path.style.transition = path.style.WebkitTransition =
 		  'stroke-dashoffset 1s ease-in-out';
 		// Go!
-		path.style.strokeDashoffset = length*(10-i)*0.1;
+		var appliedPerc = 0;
+		switch (hi_arr[i].dataset.gu) {
+		  case "종로구":
+		    appliedPerc = 1 - trail_perc[0];
+		    break;
+		  case "마포구":
+		    appliedPerc = 1 - trail_perc[1];
+		    break;
+		  case "영등포구":
+		    appliedPerc = 1 - trail_perc[2];
+		    break;
+		  case "동작구":
+		    appliedPerc = 1 - trail_perc[3];
+		    break;
+		  case "관악구":
+		    appliedPerc = 1 - trail_perc[4];
+		    break;
+		  case "강남구":
+		    appliedPerc = 1 - trail_perc[5];
+		    break;
+		  case "송파구":
+		    appliedPerc = 1 - trail_perc[6];
+		    break;
+		  case "강동구":
+		    appliedPerc = 1 - trail_perc[7];
+		    break;
+		}
+		path.style.strokeDashoffset = length*appliedPerc;
   	}else{
   		ele_arr[i].style.display = "none";
   	}
