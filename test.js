@@ -17,11 +17,11 @@ for (var i = 0; i <ele_arr.length; i++) {
 
 var wor_list_l = ["소개","방법"];
 var wor_list_r = ["소개","방법"];
-var trail_perc = [0.22,0.31,0.44,0.53,0.7,0.9,1.0];
+var trail_perc = [0.0,0.22,0.31,0.44,0.53,0.7,0.9,1.0];
 var div_arr  = document.getElementsByClassName('wrapper');
 
-var path6 = document.querySelector('#sixth-trail-path');
-var length6 = path6.getTotalLength();
+var path = document.querySelector('#sixth-trail-path');
+var length = path.getTotalLength();
 
 // Clear any previous transition
 path.style.transition = path.style.WebkitTransition =
