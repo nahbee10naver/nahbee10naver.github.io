@@ -6,6 +6,8 @@ var hi_arr = document.getElementsByClassName('hi');
 var gu = document.getElementById('gu');
 var dong = document.getElementById('dong');
 
+var bgimgs = document.getElementsByClassName('bg_img');
+
 var perc = [];
 var top_val = [];
 var hei = window.innerHeight;
@@ -49,6 +51,12 @@ path.style.strokeDashoffset = length;
 path.getBoundingClientRect();
 
 function doSomething(scroll_pos) {
+
+  //for (var i = 0; i < bgimgs.length; i++) {
+  	$('#bg_nh_1').css('transform','rotate(' + scroll_pos/5 + Math.random(10,40)+ 'deg)');
+  	$('#bg_nh_2').css('transform','rotate(' + scroll_pos/5 + Math.random(1,10)+ 'deg)');
+  //};
+
   for (var i = 0; i <hi_arr.length; i++) {
 	perc[i] = hi_arr[i].getBoundingClientRect().top/hei-0.2;
 	
