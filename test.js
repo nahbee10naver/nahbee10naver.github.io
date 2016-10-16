@@ -159,6 +159,9 @@ function ani_mani(n){
 }
 
 window.addEventListener('scroll', function(e) {
+	var theta = document.body.scrollTop/ 500 % Math.PI;
+	document.getElementById('bg_nh_1').style.webkitTransform = 'rotate(' + theta + 'rad)' ;
+  	document.getElementById('bg_nh_2').style.webkitTransform = 'rotate(' + theta + 'rad)' ;
   last_known_scroll_position = window.scrollY;
   if (!ticking) {
     window.requestAnimationFrame(function() {
@@ -169,7 +172,7 @@ window.addEventListener('scroll', function(e) {
   ticking = true;
 });
 
-$(window).scroll(function() {
+/*$(window).scroll(function() {
 var theta = $(window).scrollTop() / 500 % Math.PI;
 //$('#leftgear').css({ transform: 'rotate(' + theta + 'rad)' });
 //$('#rightgear').css({ transform: 'rotate(-' + theta + 'rad)' });
@@ -180,5 +183,5 @@ var theta = $(window).scrollTop() / 500 % Math.PI;
   	document.getElementById('bg_nh_2').style.webkitTransform = 'rotate(' + theta + 'rad)' ;
   	//document.getElementById('bg_nh_2').style.webkitTransform = 'rotate(' + scroll_pos/55 + Math.random(10,40)+ 'deg)';
 
-});
+});*/
 
