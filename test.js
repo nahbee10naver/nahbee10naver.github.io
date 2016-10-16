@@ -54,7 +54,8 @@ function doSomething(scroll_pos) {
 
   //for (var i = 0; i < bgimgs.length; i++) {
   	//$('#bg_nh_1').css('transform','rotate(' + scroll_pos/5 + Math.random(10,40)+ 'deg)');
-  	document.getElementById('bg_nh_1').style.webkitTransform = 'rotate(' + scroll_pos/5 + Math.random(10,40)+ 'deg)';
+  	document.getElementById('bg_nh_1').style.webkitTransform = 'rotate(' + scroll_pos/15 + Math.random(10,40)+ 'deg)';
+  	document.getElementById('bg_nh_2').style.webkitTransform = 'rotate(' + scroll_pos/15 + Math.random(10,40)+ 'deg)';
   	/*$('#bg_nh_1').css('-webkit-transform-2d','rotate(' + scroll_pos/5 + Math.random(10,40)+ 'deg)');
   	$('#bg_nh_1').css('-moz-transform','rotate(' + scroll_pos/5 + Math.random(10,40)+ 'deg)');
   	//$('#bg_nh_2').css('transform','rotate(' + scroll_pos/5 + Math.random(1,10)+ 'deg)');
