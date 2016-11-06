@@ -84,6 +84,7 @@ function doSomething(scroll_pos) {
 		var i_num;
 		switch (hi_arr[i].dataset.gu) {
 		  case "종로구":
+		  	console.log("hi this is jongno")
 		    appliedPerc = 1 - trail_perc[0];
 		    i_num = 1;
 		    ani_arr[0].setAttribute('dur','500ms');
@@ -130,10 +131,13 @@ function doSomething(scroll_pos) {
 
 		for (var t = 0; t <i_num; t++) {
 			document.getElementById(gu_name[t]).style.display="inherit";
+			console.log("arrow is on!");
 		};
 		if(i_num<8){
 			for (var p = i_num; p<8; p++) {
 				document.getElementById(gu_name[p]).style.display="none";
+				//console.log(p);
+				//console.log("arrow is off!");
 			};
 		}
 
@@ -156,7 +160,7 @@ function doSomething(scroll_pos) {
   };
   if(scroll_pos > (document.body.scrollHeight)*0.9){
   	ani_arr[7].endElement();
-  }else if(scroll_pos < (document.body.scrollHeight)*0.1){
+  }else if(scroll_pos < (document.body.scrollHeight)*0.02){
   	for (var p = 0; p<8; p++) {
 		document.getElementById(gu_name[p]).style.display="none";
 	};
