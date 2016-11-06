@@ -84,7 +84,6 @@ function doSomething(scroll_pos) {
 		var i_num;
 		switch (hi_arr[i].dataset.gu) {
 		  case "종로구":
-		  	console.log("hi this is jongno")
 		    appliedPerc = 1 - trail_perc[0];
 		    i_num = 1;
 		    ani_arr[0].setAttribute('dur','500ms');
@@ -131,13 +130,10 @@ function doSomething(scroll_pos) {
 
 		for (var t = 0; t <i_num; t++) {
 			document.getElementById(gu_name[t]).style.display="inherit";
-			console.log("arrow is on!");
 		};
 		if(i_num<8){
 			for (var p = i_num; p<8; p++) {
 				document.getElementById(gu_name[p]).style.display="none";
-				//console.log(p);
-				//console.log("arrow is off!");
 			};
 		}
 
@@ -177,6 +173,11 @@ function ani_mani(n){
     ani_arr[n-1].beginElement();
 }
 
+var first_ad_on = false;
+var second_ad_on = false;
+var third_ad_on = false;
+var fourth_ad_on = false;
+
 window.addEventListener('scroll', function(e) {
 	var theta = document.body.scrollTop/ 5000 % (2*Math.PI);
 	document.getElementById('bg_nh_1').style.webkitTransform = 'rotate(' + theta + 'rad)' ;
@@ -188,6 +189,23 @@ window.addEventListener('scroll', function(e) {
   	document.getElementById('bg_nh_7').style.webkitTransform = 'rotate(' + theta + 'rad)' ;
   	document.getElementById('bg_nh_8').style.webkitTransform = 'rotate(' + theta + 'rad)' ;
   last_known_scroll_position = window.scrollY;
+
+  var proportion = last_known_scroll_position/document.body.scrollHeight;
+  if(!first_ad_on && (proportion > 0.07)){
+  	console.log("first ad");
+  	document.getElementById('first_ad').style.display="inherit";
+  	first_ad_on = true;
+  }else if(!second_ad_on && (proportion > 0.23)){
+  	document.getElementById('second_ad').style.display="inherit";
+  	second_ad_on = true;
+  }else if(!third_ad_on && (proportion > 0.76)){
+  	document.getElementById('third_ad').style.display="inherit";
+  	third_ad_on = true;
+  }else if(!fourth_ad_on && (proportion > 0.87)){
+  	document.getElementById('fourth_ad').style.display="inherit";
+  	fourth_ad_on = true;
+  }
+
   if (!ticking) {
     window.requestAnimationFrame(function() {
       doSomething(last_known_scroll_position);
@@ -227,5 +245,18 @@ moveItItem.prototype.update = function(scrollTop){
 $(function(){
   $('[data-scroll-speed]').moveIt();
 });
+
+function buttonFunc(btn){
+	if(btn == 'first'){
+		document.getElementById('first_ad').style.display="none";
+	}else if(btn == 'second'){
+		document.getElementById('second_ad').style.display="none";
+	}else if(btn == 'third'){
+		document.getElementById('third_ad').style.display="none";
+	}else if(btn == 'fourth'){
+		document.getElementById('fourth_ad').style.display="none";
+	}
+
+}
 
 
