@@ -3,8 +3,12 @@ var ticking = false;
 
 var ele_arr = document.getElementsByClassName('thing');
 var hi_arr = document.getElementsByClassName('hi');
+var boxes = document.getElementsByClassName('box');
+var icon_divs = document.getElementsByClassName('icon_div');
 var gu = document.getElementById('gu');
 var dong = document.getElementById('dong');
+var first_bg = document.getElementById('bg_nh_1');
+var ch_box = document.getElementById('checking_box');
 
 var bgimgs = document.getElementsByClassName('bg_img');
 
@@ -15,6 +19,10 @@ var wid = window.innerWidth;
 
 for (var i = 0; i <ele_arr.length; i++) {
 	top_val[i] = 50+Math.random()*17;
+};
+
+for (var i = 0; i < icon_divs.length; i++) {
+	console.log(icon_divs[i].getBoundingClientRect().top);
 };
 
 var wor_list_l = ["소개","방법"];
@@ -51,6 +59,12 @@ path.style.strokeDashoffset = length;
 path.getBoundingClientRect();
 
 function doSomething(scroll_pos) {
+  
+  if(scroll_pos<ch_box.getBoundingClientRect().top){
+  	first_bg.style.display="none";
+  }else{
+  	first_bg.style.display="inherit";
+  }
 
   for (var i = 0; i <hi_arr.length; i++) {
 	perc[i] = hi_arr[i].getBoundingClientRect().top/hei-0.2;
@@ -75,6 +89,7 @@ function doSomething(scroll_pos) {
 		    ani_arr[0].setAttribute('dur','500ms');
     		ani_arr[0].setAttribute('repeatCount','indefinite');
 		    ani_arr[0].beginElement();
+		    //first_bg.style.display = 'none';
 		    break;
 		  case "마포구":
 		    appliedPerc = 1 - trail_perc[1];
@@ -159,7 +174,7 @@ function ani_mani(n){
 }
 
 window.addEventListener('scroll', function(e) {
-	var theta = document.body.scrollTop/ 7000 % Math.PI;
+	var theta = document.body.scrollTop/ 5000 % (2*Math.PI);
 	document.getElementById('bg_nh_1').style.webkitTransform = 'rotate(' + theta + 'rad)' ;
   	document.getElementById('bg_nh_2').style.webkitTransform = 'rotate(' + theta + 'rad)' ;
   	document.getElementById('bg_nh_3').style.webkitTransform = 'rotate(' + theta + 'rad)' ;
