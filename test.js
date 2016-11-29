@@ -27,7 +27,7 @@ for (var i = 0; i < icon_divs.length; i++) {
 
 var wor_list_l = ["소개","방법"];
 var wor_list_r = ["소개","방법"];
-var trail_perc = [0.0,0.22,0.31,0.44,0.53,0.7,0.9,1.0];
+var trail_perc = [0.0,0.22,0.31,0.44,0.53,0.7,0.8,0.9,1.0];
 var div_arr  = document.getElementsByClassName('wrapper');
 
 var path = document.querySelector('#sixth-trail-path');
@@ -35,10 +35,10 @@ var length = path.getTotalLength();
 
 //var jongno = document.querySelector('#jongno');
 
-var ani_id_arr = ["jongno_a","mapo_a","yeongdeung_a","dongjak_a","gwanak_a","gangnam_a","songpa_a","gangdong_a"];
+var ani_id_arr = ["jongno_a","mapo_a","yeongdeung_a","dongjak_a","gwanak_a","seocho_a","gangnam_a","songpa_a","gangdong_a"];
 var ani_arr = [];
 
-var gu_name = ["jongno","mapo","yeongdeung","dongjak","gwanak","gangnam","songpa","gangdong"];
+var gu_name = ["jongno","mapo","yeongdeung","dongjak","gwanak","seocho","gangnam","songpa","gangdong"];
 
 for (var i = 0; i<ani_id_arr.length; i++) {
 	ani_arr[i] = document.getElementById(ani_id_arr[i]);
@@ -110,19 +110,24 @@ function doSomething(scroll_pos) {
 		    i_num = 5;
 		    //ani_arr[3].endElement();
 		    break;
-		  case "강남구":
+	  	  case "서초구":
 		    appliedPerc = 1 - trail_perc[5];
 		    i_num = 6;
 		    //ani_arr[4].endElement();
 		    break;
-		  case "송파구":
+		  case "강남구":
 		    appliedPerc = 1 - trail_perc[6];
 		    i_num = 7;
+		    //ani_arr[4].endElement();
+		    break;
+		  case "송파구":
+		    appliedPerc = 1 - trail_perc[7];
+		    i_num = 8;
 		    //ani_arr[5].endElement();
 		    break;
 		  case "강동구":
-		    appliedPerc = 1 - trail_perc[7];
-		    i_num = 8;
+		    appliedPerc = 1 - trail_perc[8];
+		    i_num = 9;
 		    //ani_arr[6].endElement();
 		    break;
 		}
@@ -131,8 +136,8 @@ function doSomething(scroll_pos) {
 		for (var t = 0; t <i_num; t++) {
 			document.getElementById(gu_name[t]).style.display="inherit";
 		};
-		if(i_num<8){
-			for (var p = i_num; p<8; p++) {
+		if(i_num<9){
+			for (var p = i_num; p<9; p++) {
 				document.getElementById(gu_name[p]).style.display="none";
 			};
 		}
@@ -155,9 +160,9 @@ function doSomething(scroll_pos) {
 
   };
   if(scroll_pos > (document.body.scrollHeight)*0.9){
-  	ani_arr[7].endElement();
+  	ani_arr[8].endElement();
   }else if(scroll_pos < (document.body.scrollHeight)*0.02){
-  	for (var p = 0; p<8; p++) {
+  	for (var p = 0; p<9; p++) {
 		document.getElementById(gu_name[p]).style.display="none";
 	};
   }
