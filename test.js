@@ -184,7 +184,7 @@ var third_ad_on = false;
 var fourth_ad_on = false;
 
 window.addEventListener('scroll', function(e) {
-	var theta = document.body.scrollTop/ 5000 % (2*Math.PI);
+	/*var theta = document.body.scrollTop/ 5000 % (2*Math.PI);
 	document.getElementById('bg_nh_1').style.webkitTransform = 'rotate(' + theta + 'rad)' ;
   	document.getElementById('bg_nh_2').style.webkitTransform = 'rotate(' + theta + 'rad)' ;
   	document.getElementById('bg_nh_3').style.webkitTransform = 'rotate(' + theta + 'rad)' ;
@@ -192,7 +192,7 @@ window.addEventListener('scroll', function(e) {
   	document.getElementById('bg_nh_5').style.webkitTransform = 'rotate(' + theta + 'rad)' ;
   	document.getElementById('bg_nh_6').style.webkitTransform = 'rotate(' + theta + 'rad)' ;
   	document.getElementById('bg_nh_7').style.webkitTransform = 'rotate(' + theta + 'rad)' ;
-  	document.getElementById('bg_nh_8').style.webkitTransform = 'rotate(' + theta + 'rad)' ;
+  	document.getElementById('bg_nh_8').style.webkitTransform = 'rotate(' + theta + 'rad)' ;*/
   last_known_scroll_position = window.scrollY;
 
   var proportion = last_known_scroll_position/document.body.scrollHeight;
