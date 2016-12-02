@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Multiple Paths Test</title>
+  <style>
+    html,
+    body {
+        margin: 0;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    /* Scale canvas with resize attribute to full size */
+    canvas[resize] {
+        width: 100%;
+        height: 100%;
+    }
+  </style>
+  <script type="text/javascript" src="paper-full.js"></script>
+  <script type="text/paperscript" canvas="canvas">
+    var textItem = new PointText({
+      content: '발행일',
+      point: new Point(47.3002, 146.6312),
+      fillColor: 'black',
+      fontSize:'87',
+      fontWeight:'600'
+    });
+    textItem.fillColor = '#ff00ff';
+    textItem.strokeColor = '#000000';
+    var textItem = new PointText({
+      content: '디자인',
+      point: new Point(844.2524, 467.2025),
+      fillColor: 'black',
+      fontSize:'87',
+      fontWeight:'600'
+    });
+    var textItem = new PointText({
+      content: '발행처',
+      point: new Point(388.7867, 146.6313),
+      fillColor: 'black',
+      fontSize:'87',
+      fontWeight:'600'
+    });
+    var textItem = new PointText({
+      content: '발행인',
+      point: new Point(47.3,467.203),
+      fillColor: 'black',
+      fontSize:'87',
+      fontWeight:'600'
+    });
+    var textItem = new PointText({
+      content: '기획/제작',
+      point: new Point(389.7864,467.2026),
+      fillColor: 'black',
+      fontSize:'87',
+      fontWeight:'600'
+    });
+    var textItem = new PointText({
+      content: 'studio nahbee',
+      point: new Point(855.2731, 534.991),
+      fillColor: 'black',
+      fontSize:'36',
+      fontWeight:'600'
+    });
+    var textItem = new PointText({
+      content: '2016년',
+      point: new Point(56.134, 217.4704),
+      fillColor: 'black',
+      fontSize:'36',
+      fontWeight:'600'
+    });
+    var textItem = new PointText({
+      content: 'I WILL SEOUL U',
+      point: new Point(396.2502, 534.6646),
+      fillColor: 'black',
+      fontSize:'36',
+      fontWeight:'600'
+    });
+    var textItem = new PointText({
+      content: '기획/제작팀',
+      point: new Point(396.2502, 576.6646),
+      fillColor: 'black',
+      fontSize:'36',
+      fontWeight:'600'
+    });
+    var textItem = new PointText({
+      content: '서울특별시',
+      point: new Point(396.2501, 218.4704),
+      fillColor: 'black',
+      fontSize:'36',
+      fontWeight:'600'
+    });
+    var textItem = new PointText({
+      content: '미래유산관광',
+      point: new Point(396.2501, 260.4704),
+      fillColor: 'black',
+      fontSize:'36',
+      fontWeight:'600'
+    });
+    var textItem = new PointText({
+      content: 'Seoul Special City',
+      point: new Point(396.2501, 302.4704),
+      fillColor: 'black',
+      fontSize:'36',
+      fontWeight:'600'
+    });
+    var textItem = new PointText({
+      content: 'Department of Aborted Future',
+      point: new Point(396.2501, 342.4704),
+      fillColor: 'black',
+      fontSize:'36',
+      fontWeight:'600'
+    });
+    var textItem = new PointText({
+      content: '서울특별시장',
+      point: new Point(54.9998, 537.3906),
+      fillColor: 'black',
+      fontSize:'36',
+      fontWeight:'600'
+    });
+    var textItem = new PointText({
+      content: 'Seoulspecialmarket',
+      point: new Point(54.9998, 579.3906),
+      fillColor: 'black',
+      fontSize:'32',
+      fontWeight:'600'
+    });
+
+    var hitOptions = {
+      segments: true,
+      stroke: true,
+      fill: true,
+      tolerance: 5
+    };
+
+    
+    var segment, path;
+    var movePath = false;
+    function onMouseDown(event) {
+      segment = path = null;
+      var hitResult = project.hitTest(event.point, hitOptions);
+      if (!hitResult)
+        return;
+
+      if (event.modifiers.shift) {
+        if (hitResult.type == 'segment') {
+          hitResult.segment.remove();
+        };
+        return;
+      }
+
+      if (hitResult) {
+        path = hitResult.item;
+        if (hitResult.type == 'segment') {
+          segment = hitResult.segment;
+        } else if (hitResult.type == 'stroke') {
+          var location = hitResult.location;
+          segment = path.insert(location.index + 1, event.point);
+          path.smooth();
+        }
+      }
+      movePath = hitResult.type == 'fill';
+      console.log(project.activeLayer);
+      if (movePath)
+        project.activeLayer.addChild(hitResult.item);
+    }
+
+    function onMouseMove(event) {
+      //firstGroup.position = event.point;
+      project.activeLayer.selected = false;
+      if (event.item)
+        event.item.selected = true;
+    }
+
+    function onMouseDrag(event) {
+      /*if (segment) {
+        segment.point += event.delta;
+        path.smooth();
+      } else */if (path) {
+        path.position += event.delta;
+      }
+    }
+  </script>
+</head>
+<body>
+  
+  <canvas id="canvas" width="1159" height="694.8" style="position:absolute; top:0px;left:0px;background:#00ff00;"></canvas>
+</body>
+</html>

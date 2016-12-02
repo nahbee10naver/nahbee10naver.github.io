@@ -24,7 +24,7 @@
             debug: false,
             autoTrigger: true,
             autoTriggerUntil: false,
-            loadingHtml: '<small>Loading...</small>',
+            loadingHtml: '<small></small>',
             loadingFunction: false,
             padding: 0,
             nextSelector: 'a:last',
