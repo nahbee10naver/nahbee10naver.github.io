@@ -7,7 +7,7 @@ var boxes = document.getElementsByClassName('box');
 var icon_divs = document.getElementsByClassName('icon_div');
 var gu = document.getElementById('gu');
 var dong = document.getElementById('dong');
-var first_bg = document.getElementById('bg_nh_1');
+//var first_bg = document.getElementById('bg_nh_1');
 var ch_box = document.getElementById('checking_box');
 
 //var bgimgs = document.getElementsByClassName('bg_img');
@@ -60,11 +60,11 @@ path.getBoundingClientRect();
 
 function doSomething(scroll_pos) {
   
-  if(scroll_pos<ch_box.getBoundingClientRect().top){
+  /*if(scroll_pos<ch_box.getBoundingClientRect().top){
   	first_bg.style.display="none";
   }else{
   	first_bg.style.display="inherit";
-  }
+  }*/
 
   for (var i = 0; i <hi_arr.length; i++) {
 	perc[i] = hi_arr[i].getBoundingClientRect().top/hei-0.2;
