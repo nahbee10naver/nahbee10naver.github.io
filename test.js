@@ -10,7 +10,7 @@ var dong = document.getElementById('dong');
 var first_bg = document.getElementById('bg_nh_1');
 var ch_box = document.getElementById('checking_box');
 
-var bgimgs = document.getElementsByClassName('bg_img');
+//var bgimgs = document.getElementsByClassName('bg_img');
 
 var perc = [];
 var top_val = [];
