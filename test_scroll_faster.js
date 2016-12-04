@@ -270,6 +270,7 @@ $(document).ready(function() {
 var mq = window.matchMedia( "(max-width: 600px)" );
 if (mq.matches) {
 	document.getElementById("bg_img_as_div").src="img/bg_m_l.png";
+	document.getElementById("bg_img_as_div").style.height="inherit";
 }
 
 
