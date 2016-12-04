@@ -13,6 +13,9 @@ var Interface = function() {
 			$('[data-ui="jscroll-default"]').jscroll({
 			    debug: true
 			});
+            $('[data-ui="jscroll-mapo"]').jscroll({
+                debug: true
+            });
 		}
     };
 }();
