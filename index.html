@@ -17,6 +17,15 @@
 
   	*{font-family: sans-serif;}
 
+    body{
+      height:1900px; 
+      overflow-x:hidden; 
+      overflow-y: scroll; 
+      background: url(img/bg_s.png) no-repeat center center fixed; 
+      background-size: cover; 
+      background-repeat: no-repeat;
+    }
+
   	.nh_big{
   		font-size: 70px;
   		font-weight: bold;
@@ -281,6 +290,11 @@
     }
 
   	@media (max-width: 600px) {
+      body{
+        background: url(img/bg_m.png) no-repeat center center fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
 	  .nh_name_nh{
   		font-size: 50px !important;
   		line-height:50px !important;
@@ -430,7 +444,7 @@
 		*{font-family: 'Noto Sans KR', sans-serif;}
   	</style>
 </head>
-<body style="height:1900px; overflow-x:hidden; overflow-y: scroll; ">
+<body>
 
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -1680,22 +1694,22 @@
     <img src="img/journey/gangdong_3d_bg.png" class="bg_img" id="bg_nh_8" >
   </div>-->
 
-  <div id="first_ad">
+  <div id="first_ad" style="z-index: 10000;">
     <button onclick="buttonFunc('first')" class="button" style="">X</button>
     <a href="https://hwhwi.github.io/f-furniture.html" target="_blank"><img src="img/ad/resized_1.gif" class="btn_img" /></a>
   </div>
 
-  <div id="second_ad">
+  <div id="second_ad" style="z-index: 10000;">
     <button onclick="buttonFunc('second')" class="button" style="">X</button>
     <a href="https://hwhwi.github.io/silver.html" target="_blank"><img src="img/ad/resized_2.gif" class="btn_img" /></a>
   </div>
 
-  <div id="third_ad">
+  <div id="third_ad" style="z-index: 10000;">
     <button onclick="buttonFunc('third')" class="button" style="">X</button>
     <a href="https://hwhwi.github.io/healtheworld.html" target="_blank"><img src="img/ad/resized_3.gif" class="btn_img" /></a>
   </div>
 
-  <div id="fourth_ad">
+  <div id="fourth_ad" style="z-index: 10000;">
     <button onclick="buttonFunc('fourth')" class="button" style="">X</button>
     <a href="https://hwhwi.github.io/survival.html" target="_blank"><img src="img/ad/resized_4.gif" class="btn_img" /></a>
   </div>
