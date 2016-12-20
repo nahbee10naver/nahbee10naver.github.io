@@ -2,4 +2,4 @@
 
 
 
-![alt tag](https://nahbee10.github.io/cre8s/iwillseoulyougithub.png)
+![alt tag](https://nahbee10naver.github.io/img/iwillseoulyouupdate.png)
